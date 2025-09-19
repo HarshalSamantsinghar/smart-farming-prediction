@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<style>
+  .mt-0 {
+    margin-top: 50px !important;
+  }
+  .fertilizer-image {
+    max-width: 100%; 
+    height: auto; 
+    width: 500px; /* Set the desired width */
+    height: 500px; /* Set the desired height */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+</style>
+
+<body style="background-color: whitesmoke; font-family: 'Argene', sans-serif;">
+    <div class="container py-2 mx-auto my-50 h-10" style="margin: 4rem;">
+        <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <p class="text-justify" style="color: black; font-size: 22px;">{{ recommendation }}</p>
+                <div class="text-center">
+                    <img src="{{ url_for('static', filename='images/' ~ image_file) }}" alt="Fertilizer Image" class="fertilizer-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
